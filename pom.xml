@@ -105,6 +105,6 @@
     </build>
     <properties>
         <jira.version>6.0.4</jira.version>
-        <amps.version>5.0.3</amps.version>
+        <amps.version>5.0.4</amps.version>
     </properties>
 </project>
