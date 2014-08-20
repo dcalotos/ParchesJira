@@ -1,0 +1,22 @@
+Asigna la incidencia a un usuario dependiendo de quien crea la issue.
+<table class="aui">
+	<tr>
+    	<td>
+        	Usuario administrador con permisos de edición sobre el proyecto TP :
+    	</td>
+    	<td>
+    		&nbsp;&nbsp;&nbsp;&nbsp
+        	<select name="userAdmin">
+				#foreach ($user in $allUsers)
+					<option value="$user.name" 
+					#if($!userAdmin && $user.name == $userAdmin)  
+						selected="selected"
+					#end>$user.name</option>
+				#end
+			</select>
+    	</td>
+    	<td width=40%>
+    	  &nbsp;&nbsp;&nbsp;&nbsp
+    	</td>
+	</tr>
+</table>

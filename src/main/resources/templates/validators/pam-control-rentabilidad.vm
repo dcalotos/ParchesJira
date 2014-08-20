@@ -1,0 +1,4 @@
+Valida que el campo obligatorio de baja rentabilidad este relleno. Podemos elegir cualquier valor.
+#if ($field)
+	Valida el formato correcto del campo '$field'.
+#end

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+    <param name="plugin-icon">images/WK min.png</param>
+    <param name="plugin-logo">images/WK max.png</param>
+  </plugin-info>
+  <!-- add our i18n resource -->
+  <resource type="i18n" name="i18n" location="ParchesJira"/>
+  <!-- add our web resources -->
+  <web-resource key="ParchesJira-resources" name="ParchesJira Web Resources">
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+    <resource type="download" name="ParchesJira.css" location="/css/ParchesJira.css"/>
+    <resource type="download" name="ParchesJira.js" location="/js/ParchesJira.js"/>
+    <resource type="download" name="images/" location="/images"/>
+    <context>ParchesJira</context>
+  </web-resource>
+  <!-- EDITOR DE EVENTOS -->
+  <component-import key="EditorEventos" interface="com.atlassian.event.api.EventPublisher"/>
+  <component key="Listener" class="com.dc.jira.ProcesarEdicion">
+    <description>Clase que perrmite controlar los eventos de JIRA.</description>
+  </component>
+  <!-- POST FUNCTIONS -->
+  <workflow-function key="arq-asignacion-otros-usuarios" name="ARQ Asignacion Otros Usuarios" i18n-name-key="arq-asignacion-otros-usuarios.name" class="com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuariosFactory">
+    <description key="arq-asignacion-otros-usuarios.description">Plugin ARQ Asignacion Otros Usuarios</description>
+    <function-class>com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuarios</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/arq-asignacion-otros-usuarios.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
+  </workflow-function>
+  <workflow-function key="cec-asignacion-especialista" name="CEC Asignacion Especialista" i18n-name-key="cec-asignacion-especialista.name" class="com.dc.jira.jira.workflow.CECAsignacionEspecialistaFactory">
+    <description key="cec-asignacion-especialista.description">Plugin CEC Asignacion Especialista</description>
+    <function-class>com.dc.jira.jira.workflow.CECAsignacionEspecialista</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/cec-asignacion-especialista.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
+  </workflow-function>
+  <workflow-function key="cec-cambio-nivel-seguridad" name="CEC Cambio Nivel Seguridad" i18n-name-key="cec-cambio-nivel-seguridad.name" class="com.dc.jira.jira.workflow.CECCambioNivelSeguridadFactory">
+    <description key="cec-cambio-nivel-seguridad.description">Plugin CEC Cambio Nivel Seguridad</description>
+    <function-class>com.dc.jira.jira.workflow.CECCambioNivelSeguridad</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/cec-cambio-nivel-seguridad.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-cambio-nivel-seguridad-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-cambio-nivel-seguridad-input.vm"/>
+  </workflow-function>
+  <workflow-function key="cec-completar-datos-phoenix" name="CEC Completar Datos Phoenix" i18n-name-key="cec-completar-datos-phoenix.name" class="com.dc.jira.jira.workflow.CECCompletarDatosPhoenixFactory">
+    <description key="cec-completar-datos-phoenix.description">Plugin CEC Completar Datos Phoenix</description>
+    <function-class>com.dc.jira.jira.workflow.CECCompletarDatosPhoenix</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/cec-completar-datos-phoenix.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-completar-datos-phoenix-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-completar-datos-phoenix-input.vm"/>
+  </workflow-function>
+  <workflow-function key="cec-exportar-consultas" name="CEC Exportar Consultas" i18n-name-key="cec-exportar-consultas.name" class="com.dc.jira.jira.workflow.CECExportarConsultasFactory">
+    <description key="cec-exportar-consultas.description">Plugin CEC Exportar Consultas</description>
+    <function-class>com.dc.jira.jira.workflow.CECExportarConsultas</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/cec-exportar-consultas.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-exportar-consultas-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-exportar-consultas-input.vm"/>
+  </workflow-function>
+  <workflow-function key="gdv-asignacion-validador" name="GDV Asignacion Validador" i18n-name-key="gdv-asignacion-validador.name" class="com.dc.jira.jira.workflow.GDVAsignacionValidadorFactory">
+    <description key="gdv-asignacion-validador.description">Plugin GDV Asignacion Validador</description>
+    <function-class>com.dc.jira.jira.workflow.GDVAsignacionValidador</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/gdv-asignacion-validador.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/gdv-asignacion-validador-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/gdv-asignacion-validador-input.vm"/>
+  </workflow-function>
+  <workflow-function key="gdv-generador-codigo" name="GDV Generador Codigo" i18n-name-key="gdv-generador-codigo.name" class="com.dc.jira.jira.workflow.GDVGeneradorCodigoFactory">
+    <description key="gdv-generador-codigo.description">Plugin GDV Generador Codigo</description>
+    <function-class>com.dc.jira.jira.workflow.GDVGeneradorCodigo</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/gdv-generador-codigo.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/gdv-generador-codigo-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/gdv-generador-codigo-input.vm"/>
+  </workflow-function>
+  <workflow-function key="ipf-asignacion-responsable-informante-creacion" name="IPF Asignacion Responsable Informante Creacion" i18n-name-key="ipf-asignacion-responsable-informante-creacion.name" class="com.dc.jira.jira.workflow.IPFAsignacionResponsableInformanteCreacionFactory">
+    <description key="ipf-asignacion-responsable-informante-creacion.description">Plugin IPF Asignacion Responsable Informante Creacion</description>
+    <function-class>com.dc.jira.jira.workflow.IPFAsignacionResponsableInformanteCreacion</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/ipf-asignacion-responsable-informante-creacion.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/ipf-asignacion-responsable-informante-creacion-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/ipf-asignacion-responsable-informante-creacion-input.vm"/>
+  </workflow-function>
+  <workflow-function key="ipf-establecimiento-prioridad-creacion" name="IPF Establecimiento Prioridad Creacion" i18n-name-key="ipf-establecimiento-prioridad-creacion.name" class="com.dc.jira.jira.workflow.IPFEstablecimientoPrioridadCreacionFactory">
+    <description key="ipf-establecimiento-prioridad-creacion.description">Plugin IPF Establecimiento Prioridad Creacion</description>
+    <function-class>com.dc.jira.jira.workflow.IPFEstablecimientoPrioridadCreacion</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/ipf-establecimiento-prioridad-creacion.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/ipf-establecimiento-prioridad-creacion-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/ipf-establecimiento-prioridad-creacion-input.vm"/>
+  </workflow-function>
+  <workflow-function key="ipo-establecimiento-prioridad-creacion" name="IPO Establecimiento Prioridad Creacion" i18n-name-key="ipo-establecimiento-prioridad-creacion.name" class="com.dc.jira.jira.workflow.IPOEstablecimientoPrioridadCreacionFactory">
+    <description key="ipo-establecimiento-prioridad-creacion.description">Plugin IPO Establecimiento Prioridad Creacion</description>
+    <function-class>com.dc.jira.jira.workflow.IPOEstablecimientoPrioridadCreacion</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/ipo-establecimiento-prioridad-creacion.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/ipo-establecimiento-prioridad-creacion-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/ipo-establecimiento-prioridad-creacion-input.vm"/>
+  </workflow-function>
+  <workflow-function key="ph-transicionar-issue" name="PH Transicionar Issue" i18n-name-key="ph-transicionar-issue.name" class="com.dc.jira.jira.workflow.PHTransicionarIssueFactory">
+    <description key="ph-transicionar-issue.description">Plugin PH Transicionar Issue</description>
+    <function-class>com.dc.jira.jira.workflow.PHTransicionarIssue</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/ph-transicionar-issue.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/ph-transicionar-issue-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/ph-transicionar-issue-input.vm"/>
+  </workflow-function>
+  <workflow-function key="tp-asignacion-responsable-creacion" name="TP Asignacion Responsable Creacion" i18n-name-key="tp-asignacion-responsable-creacion.name" class="com.dc.jira.jira.workflow.TPAsignacionResponsableCreacionFactory">
+    <description key="tp-asignacion-responsable-creacion.description">Plugin TP Asignacion Responsable Creacion</description>
+    <function-class>com.dc.jira.jira.workflow.TPAsignacionResponsableCreacion</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/tp-asignacion-responsable-creacion.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/tp-asignacion-responsable-creacion-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/tp-asignacion-responsable-creacion-input.vm"/>
+  </workflow-function>
+  <workflow-function key="wcj-asignacion-administrador-creacion" name="WCJ Asignacion Administrador Creacion" i18n-name-key="wcj-asignacion-administrador-creacion.name" class="com.dc.jira.jira.workflow.WCJAsignacionAdministradorCreacionFactory">
+    <description key="wcj-asignacion-administrador-creacion.description">Plugin WCJ Asignacion Administrador Creacion</description>
+    <function-class>com.dc.jira.jira.workflow.WCJAsignacionAdministradorCreacion</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/wcj-asignacion-administrador-creacion.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/wcj-asignacion-administrador-creacion-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/wcj-asignacion-administrador-creacion-input.vm"/>
+  </workflow-function>
+  <workflow-function key="wcj-asignacion-responsable-materia" name="WCJ Asignacion Responsable Materia" i18n-name-key="wcj-asignacion-responsable-materia.name" class="com.dc.jira.jira.workflow.WCJAsignacionResponsableMateriaFactory">
+    <description key="wcj-asignacion-responsable-materia.description">Plugin WCJ Asignacion Responsable Materia</description>
+    <function-class>com.dc.jira.jira.workflow.WCJAsignacionResponsableMateria</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/wcj-asignacion-responsable-materia.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/wcj-asignacion-responsable-materia-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/wcj-asignacion-responsable-materia-input.vm"/>
+  </workflow-function>
+  <workflow-function key="wcj-cambio-nivel-seguridad" name="WCJ Cambio Nivel Seguridad" i18n-name-key="wcj-cambio-nivel-seguridad.name" class="com.dc.jira.jira.workflow.WCJCambioNivelSeguridadFactory">
+    <description key="wcj-cambio-nivel-seguridad.description">Plugin WCJ Cambio Nivel Seguridad</description>
+    <function-class>com.dc.jira.jira.workflow.WCJCambioNivelSeguridad</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/wcj-cambio-nivel-seguridad.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/wcj-cambio-nivel-seguridad-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/wcj-cambio-nivel-seguridad-input.vm"/>
+  </workflow-function>
+  <workflow-function key="wcj-exportar-consultas-bde" name="WCJ Exportar Consultas BDE" i18n-name-key="wcj-exportar-consultas-bde.name" class="com.dc.jira.jira.workflow.WCJExportarConsultasBDEFactory">
+    <description key="wcj-exportar-consultas-bde.description">Plugin WCJ Exportar Consultas BDE</description>
+    <function-class>com.dc.jira.jira.workflow.WCJExportarConsultasBDE</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/wcj-exportar-consultas-bde.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/wcj-exportar-consultas-bde-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/wcj-exportar-consultas-bde-input.vm"/>
+  </workflow-function>
+  <workflow-function key="pam-asignacion-usuario-lista" name="PAM Asignacion Usuario Lista" i18n-name-key="pam-asignacion-usuario-lista.name" class="com.dc.jira.jira.workflow.PAMAsignacionUsuarioListaFactory">
+    <description key="pam-asignacion-usuario-lista.description">Plugin PAM Asignacion Usuario Lista</description>
+    <function-class>com.dc.jira.jira.workflow.PAMAsignacionUsuarioLista</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/pam-asignacion-usuario-lista.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/pam-asignacion-usuario-lista-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/pam-asignacion-usuario-lista-input.vm"/>
+  </workflow-function>
+  <workflow-function key="mdi-asignacion-usuario-lista" name="MDI Asignacion Usuario Lista" i18n-name-key="mdi-asignacion-usuario-lista.name" class="com.dc.jira.jira.workflow.MDIAsignacionUsuarioListaFactory">
+    <description key="mdi-asignacion-usuario-lista.description">Plugin MDI Asignacion Usuario Lista</description>
+    <function-class>com.dc.jira.jira.workflow.MDIAsignacionUsuarioLista</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/mdi-asignacion-usuario-lista.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/mdi-asignacion-usuario-lista-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/mdi-asignacion-usuario-lista-input.vm"/>
+  </workflow-function>
+  <workflow-function key="mdi-cambio-nivel-seguridad" name="MDI Cambio Nivel Seguridad" i18n-name-key="mdi-cambio-nivel-seguridad.name" class="com.dc.jira.jira.workflow.MDICambioNivelSeguridadFactory">
+    <description key="mdi-cambio-nivel-seguridad.description">Plugin MDI Cambio Nivel Seguridad</description>
+    <function-class>com.dc.jira.jira.workflow.MDICambioNivelSeguridad</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/mdi-cambio-nivel-seguridad.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/mdi-cambio-nivel-seguridad-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/mdi-cambio-nivel-seguridad-input.vm"/>
+  </workflow-function>
+  <workflow-function key="gss-control-permisos-edicion" name="GSS Control Permisos Edicion" i18n-name-key="gss-control-permisos-edicion.name" class="com.dc.jira.jira.workflow.GSSControlPermisosEdicionFactory">
+    <description key="gss-control-permisos-edicion.description">Plugin GSS Control Permisos Edicion</description>
+    <function-class>com.dc.jira.jira.workflow.GSSControlPermisosEdicion</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/gss-control-permisos-edicion.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/gss-control-permisos-edicion-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/gss-control-permisos-edicion-input.vm"/>
+  </workflow-function>
+  <workflow-function key="gdv-validador-director" name="GDV Validador Director" i18n-name-key="gdv-validador-director.name" class="com.dc.jira.jira.workflow.GDVValidadorDirectorFactory">
+    <description key="gdv-validador-director.description">Plugin GDV Validador Director</description>
+    <function-class>com.dc.jira.jira.workflow.GDVValidadorDirector</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/gdv-validador-director.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/gdv-validador-director-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/gdv-validador-director-input.vm"/>
+  </workflow-function>
+  <workflow-function key="pam-asignacion-watchers" name="PAM Asignacion Watchers" i18n-name-key="pam-asignacion-watchers.name" class="com.dc.jira.jira.workflow.PAMAsignacionWatchersFactory">
+    <description key="pam-asignacion-watchers.description">Plugin PAM Asignacion Watchers</description>
+    <function-class>com.dc.jira.jira.workflow.PAMAsignacionWatchers</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/pam-asignacion-watchers.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/pam-asignacion-watchers-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/pam-asignacion-watchers-input.vm"/>
+  </workflow-function>
+  <workflow-function key="pam-personalizacion-campo" name="PAM Personalizacion Campo" i18n-name-key="pam-personalizacion-campo.name" class="com.dc.jira.jira.workflow.PAMPersonalizacionCampoFactory">
+    <description key="pam-personalizacion-campo.description">Plugin PAM Personalizacion Campo</description>
+    <function-class>com.dc.jira.jira.workflow.PAMPersonalizacionCampo</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/pam-personalizacion-campo.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/pam-personalizacion-campo-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/pam-personalizacion-campo-input.vm"/>
+  </workflow-function>
+  <workflow-function key="pam-fechas-slas" name="PAM Fechas SLAs" i18n-name-key="pam-fechas-slas.name" class="com.dc.jira.jira.workflow.PAMFechasSLAsFactory">
+    <description key="pam-fechas-slas.description">Plugin PAM Fechas SLAs Plugin</description>
+    <function-class>com.dc.jira.jira.workflow.PAMFechasSLAs</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/pam-fechas-slas.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/pam-fechas-slas-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/pam-fechas-slas-input.vm"/>
+  </workflow-function>
+  <workflow-function key="gdv-transicionar-issue" name="GDV Transicionar Issue" i18n-name-key="gdv-transicionar-issue.name" class="com.dc.jira.jira.workflow.GDVTransicionarIssueFactory">
+    <description key="gdv-transicionar-issue.description">Plugin GDV Transicionar Issue</description>
+    <function-class>com.dc.jira.jira.workflow.GDVTransicionarIssue</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/gdv-transicionar-issue.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/gdv-transicionar-issue-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/gdv-transicionar-issue-input.vm"/>
+  </workflow-function>
+  <!-- FUNCIONES PARA VALIDACION DE DATOS -->
+  <workflow-validator key="cec-validador-cuc" name="CEC Validador CUC" i18n-name-key="cec-validador-cuc.name" class="com.dc.jira.jira.workflow.CECValidadorCUCFactory">
+    <description key="cec-validador-cuc.description">Plugin CEC Validador CUC</description>
+    <validator-class>com.dc.jira.jira.workflow.CECValidadorCUC</validator-class>
+    <resource type="velocity" name="view" location="templates/validators/cec-validador-cuc.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/validators/cec-validador-cuc-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/validators/cec-validador-cuc-input.vm"/>
+  </workflow-validator>
+  <workflow-validator key="gdv-validador-usuario" name="GDV Validador Usuario" i18n-name-key="gdv-validador-usuario.name" class="com.dc.jira.jira.workflow.GDVValidadorUsuarioFactory">
+    <description key="gdv-validador-usuario.description">Plugin GDV Validador Usuario</description>
+    <validator-class>com.dc.jira.jira.workflow.GDVValidadorUsuario</validator-class>
+    <resource type="velocity" name="view" location="templates/validators/gdv-validador-usuario.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/validators/gdv-validador-usuario-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/validators/gdv-validador-usuario-input.vm"/>
+  </workflow-validator>
+  <workflow-validator key="gss-validador-permisos-aplicaciones" name="GSS Validador Permisos Aplicaciones" i18n-name-key="gss-validador-permisos-aplicaciones.name" class="com.dc.jira.jira.workflow.GSSValidadorPermisosAplicacionesFactory">
+    <description key="gss-validador-permisos-aplicaciones.description">Plugin GSS Validador Permisos Aplicaciones</description>
+    <validator-class>com.dc.jira.jira.workflow.GSSValidadorPermisosAplicaciones</validator-class>
+    <resource type="velocity" name="view" location="templates/validators/gss-validador-permisos-aplicaciones.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/validators/gss-validador-permisos-aplicaciones-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/validators/gss-validador-permisos-aplicaciones-input.vm"/>
+  </workflow-validator>
+  <workflow-validator key="pam-control-rentabilidad" name="PAM Control Rentabilidad" i18n-name-key="pam-control-rentabilidad.name" class="com.dc.jira.jira.workflow.PAMControlRentabilidadFactory">
+    <description key="pam-control-rentabilidad.description">Plugin PAM Control Rentabilidad</description>
+    <validator-class>com.dc.jira.jira.workflow.PAMControlRentabilidad</validator-class>
+    <resource type="velocity" name="view" location="templates/validators/pam-control-rentabilidad.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/validators/pam-control-rentabilidad-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/validators/pam-control-rentabilidad-input.vm"/>
+  </workflow-validator>
+  <workflow-validator key="gdv-validador-transicionar-issue" name="GDV Validador Transicionar Issue" i18n-name-key="gdv-validador-transicionar-issue.name" class="com.dc.jira.jira.workflow.GDVValidadorTransicionarIssueFactory">
+    <description key="gdv-validador-transicionar-issue.description">Plugin GDV Validador Transicionar Issue</description>
+    <validator-class>com.dc.jira.jira.workflow.GDVValidadorTransicionarIssue</validator-class>
+    <resource type="velocity" name="view" location="templates/validators/gdv-validador-transicionar-issue.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/validators/gdv-validador-transicionar-issue-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/validators/gdv-validador-transicionar-issue-input.vm"/>
+  </workflow-validator>
+</atlassian-plugin>

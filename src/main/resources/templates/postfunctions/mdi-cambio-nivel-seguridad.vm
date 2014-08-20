@@ -1,0 +1,5 @@
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre MDI para poder realizar la operación de edición.<br/>
+Cambia el nivel de seguridad cuando se crea la tarea de mantenimiento.<br/>
+
+&nbsp;&nbsp;-&nbsp;Usuario administrador seleccionado: &nbsp;&nbsp;<b>$userAdmin</b>

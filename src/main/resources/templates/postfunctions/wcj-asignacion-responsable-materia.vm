@@ -1,0 +1,5 @@
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre WCJ para poder realizar la operación de edición.<br/>
+Asigna el responsable de la issue en función de la materia y submateria seleccionada.<br/>
+
+&nbsp;&nbsp;-&nbsp;Usuario administrador seleccionado: &nbsp;&nbsp;<b>$userAdmin</b>

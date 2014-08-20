@@ -1,0 +1,22 @@
+Guardar los valores originales de Issue Type y Componente o Aplicaciones BO SAUX.
+<table class="aui">
+	<tr>
+    	<td>
+        	Usuario administrador con permisos de edición sobre el proyecto PHOENIX o BACSAUX:
+    	</td>
+    	<td>
+    		&nbsp;&nbsp;&nbsp;&nbsp
+        	<select name="userAdmin">
+				#foreach ($user in $allUsers)
+					<option value="$user.name" 
+					#if($!userAdmin && $user.name == $userAdmin)  
+						selected="selected"
+					#end>$user.name</option>
+				#end
+			</select>
+    	</td>
+    	<td width=40%>
+    	  &nbsp;&nbsp;&nbsp;&nbsp
+    	</td>
+	</tr>
+</table>

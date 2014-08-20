@@ -1,0 +1,40 @@
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre CE para poder realizar la operación de edición.<br/>
+Exportar los datos de la consulta de JIRA para que se importen en BDE.<br/>
+
+&nbsp;&nbsp;-&nbsp;Usuario administrador seleccionado: &nbsp;&nbsp;<b>$userAdmin</b>
+<br/>
+<hr>
+<table>
+	<tr>
+    	<td width=30%>
+        	Usuario administrador del proyecto:
+    	</td>
+    	<td  width=30%>
+    		<b>$userAdmin</b>
+    	</td>
+    	<td width=20%>
+    	  
+    	</td>
+
+	</tr>
+</table>
+<br/>
+<hr>
+Directorios donde dejar words y xmls:
+<br/>
+<table>
+	<tr>
+    	<td width=20%>
+        	Directorio base:
+    	</td>
+    	<td  width=20%>
+    		<b>$directorio</b>
+    	</td>
+    	<td width=20%>
+    	  
+    	</td>
+	</tr>
+</table>
+<br>
+<hr>

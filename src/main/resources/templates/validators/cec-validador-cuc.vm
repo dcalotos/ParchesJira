@@ -1,0 +1,4 @@
+Valida que el CUC tiene un formato correcto para la consulta sobre la base de datos de PHOENIX.
+#if ($field)
+	Valida el formato correcto del campo '$field'.
+#end

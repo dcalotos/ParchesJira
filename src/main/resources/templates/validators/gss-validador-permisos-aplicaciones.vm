@@ -1,0 +1,4 @@
+Valida que el usuario tenga permisos para realizar las operaciones sobre la aplicación seleccionada de PHOENIX.
+#if ($field)
+	Valida los permisos del usuario sobre la aplicacion del campo '$field'.
+#end

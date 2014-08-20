@@ -1,0 +1,18 @@
+Valida que el campo obligatorio de baja rentabilidad esté relleno. Podemos elegir cualquier valor.
+<tr bgcolor="#ffffff">
+    <td align="right" valign="top" bgcolor="#fffff0">
+        <span class="label">Campos personalizados.</span>
+    </td>
+    <td bgcolor="#ffffff" nowrap>
+        <select name="field" id="field">
+        #foreach ($cf in $fields)
+        	<option value="$cf.name"
+            #if ($cf.name.equals($field))
+                SELECTED
+            #end
+            >$cf.name</option>
+        #end
+        </select>
+        <br><font size="1">Selecciona el campo para que se validen los permisos</font>
+    </td>
+</tr>

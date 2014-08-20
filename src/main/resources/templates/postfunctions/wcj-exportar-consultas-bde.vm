@@ -1,0 +1,38 @@
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre WCJ para poder realizar la operación de edición.<br/>
+Exporta los datos a utilizar para incluir la consulta en BDE.<br/>
+<br/>
+<hr>
+<table>
+	<tr>
+    	<td width=30%>
+        	Usuario administrador del proyecto:
+    	</td>
+    	<td  width=30%>
+    		<b>$userAdmin</b>
+    	</td>
+    	<td width=20%>
+    	  
+    	</td>
+
+	</tr>
+</table>
+<br/>
+<hr>
+Directorios donde dejar words y xmls:
+<br/>
+<table>
+	<tr>
+    	<td width=20%>
+        	Directorio base:
+    	</td>
+    	<td  width=20%>
+    		<b>$directorio</b>
+    	</td>
+    	<td width=20%>
+    	  
+    	</td>
+	</tr>
+</table>
+<br>
+<hr>

@@ -1,0 +1,56 @@
+Exporta los datos a utilizar para incluir la consulta en BDE del proyecto WCJ.
+<table class="aui">
+	<tr>
+    	<td width=30%>
+        	Usuario administrador con permisos de edición sobre el proyecto WCJ :
+    	</td>
+    	<td>
+    		&nbsp;&nbsp;&nbsp;&nbsp
+        	<select name="userAdmin">
+				#foreach ($user in $allUsers)
+					<option value="$user.name" 
+					#if($!userAdmin && $user.name == $userAdmin)  
+						selected="selected"
+					#end>$user.name</option>
+				#end
+			</select>
+    	</td>
+    	<td width=10%>
+    	  &nbsp;&nbsp;&nbsp;&nbsp
+    	</td>
+	</tr>
+	<tr>
+    	<td class="fieldLabelArea" width=30%>
+        	Seleccionar directorio para los ficheros generados:
+    	</td>
+    	<td>
+		<input type="radio" name="directorio" value="\\\\iehreditor02\\WKF\\Productos\\ConsultasJira\\" checked	
+			>&nbsp;&nbsp;PRODUCCION
+	</td>
+	</tr>
+	<tr>
+    	<td>
+        </td>
+    	<td>
+		
+		<input type="radio" name="directorio" value="\\hyperion\Atlassian\WCJ\"
+			>&nbsp;&nbsp;PREPRODUCCION
+	</td>
+	</tr>
+	<tr>
+    	<td>
+        </td>
+    	<td>	
+		<input type="radio" name="directorio" value="D:\Java\Parches\fuentes\WCJ\"
+			>&nbsp;&nbsp;DESARROLLO
+	</td>
+	</tr>
+	<tr>
+    	<td>
+        </td>
+    	<td>	
+		<input type="radio" name="directorio" value="D:\Atlassian\WCJ\"
+			>&nbsp;&nbsp;MAQUINA LOCAL (DCALOTO2)
+	</td>
+	</tr>
+</table>

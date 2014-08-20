@@ -1,0 +1,21 @@
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre GDV para poder realizar la operacion de edicion.<br/>
+Transiciona la peticion de viaje en caso de no tener el usuario que viaje un Director responsable en la base de datos de plugins de JIRA.
+<br/>
+<br/>
+<hr>
+<table class="aui">
+	<tr>
+    	<td width=30%>
+        	Usuario administrador del proyecto:
+    	</td>
+    	<td  width=30%>
+    		<b>$userAdmin</b>
+    	</td>
+    	<td width=20%>
+    	  
+    	</td>
+
+	</tr>
+</table>
+<br/>

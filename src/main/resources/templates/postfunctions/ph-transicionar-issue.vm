@@ -1,0 +1,36 @@
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre PHOENIX para poder realizar la operación de edición.<br/>
+Transiciona la tarea en funcion del numero de horas que se dedica al nuevo requerimiento.<br/>
+<br/>
+<hr>
+<table class="aui">
+	<tr>
+    	<td width=30%>
+        	Usuario administrador del proyecto:
+    	</td>
+    	<td  width=30%>
+    		<b>$userAdmin</b>
+    	</td>
+    	<td width=20%>
+    	  
+    	</td>
+
+	</tr>
+</table>
+<br/>
+<hr>
+
+<table class="aui">
+	<tr>
+    	<td width=30%>
+        	Proyecto y Horas:
+    	</td>
+    	<td  width=30%>
+    		<b>$ProyectoHoras</b>
+    	</td>
+    	<td width=20%>
+    	  
+    	</td>
+
+	</tr>
+</table>

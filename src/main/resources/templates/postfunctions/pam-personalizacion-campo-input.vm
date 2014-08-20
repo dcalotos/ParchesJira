@@ -1,0 +1,35 @@
+Post function que asigna el campo a formatear.
+<table class="aui">
+	<tr bgcolor="#ffffff">
+    	<td>
+        	Usuario administrador con permisos de edicion sobre el proyecto PAM:
+    	</td>
+    	<td align="right" valign="top" bgcolor="#fffff0">
+    		&nbsp;&nbsp;&nbsp;&nbsp
+        	<select name="userAdmin">
+				#foreach ($user in $allUsers)
+					<option value="$user.name" 
+					#if($!userAdmin && $user.name == $userAdmin)  
+						selected="selected"
+					#end>$user.name</option>
+				#end
+			</select>
+    	</td>
+    	<td align="right" valign="top" bgcolor="#fffff0">
+        	<span class="label">Campos personalizados:</span>
+    	</td>
+    	<td bgcolor="#ffffff" nowrap>
+    		&nbsp;&nbsp;&nbsp;&nbsp
+        	<select name="field" id="field">
+        	#foreach ($cf in $fields)
+        		<option value="$cf.name"
+            	#if ($cf.name.equals($field))
+                	SELECTED
+            	#end
+            	>$cf.name</option>
+        	#end
+        	</select>
+        	Selecciona el campo a formatear
+    	</td>
+	</tr>
+</table>

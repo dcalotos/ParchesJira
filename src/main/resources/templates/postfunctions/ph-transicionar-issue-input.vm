@@ -1,0 +1,28 @@
+Transiciona la tarea en funcion del numero de horas que se dedica al nuevo requerimiento.
+<table class="aui">
+	<tr>
+    	<td width=50%>
+        	Usuario administrador con permisos de edición sobre el proyecto PHOENIX:
+    	</td>
+    	<td>
+    		&nbsp;&nbsp;&nbsp;&nbsp
+        	<select name="userAdmin">
+				#foreach ($user in $allUsers)
+					<option value="$user.name" 
+					#if($!userAdmin && $user.name == $userAdmin)  
+						selected="selected"
+					#end>$user.name</option>
+				#end
+			</select>
+    	</td>
+	</tr>
+	<tr>
+    	<td class="fieldLabelArea">
+        	Proyecto y Horas:
+    	</td>
+    	<td nowrap>
+			&nbsp;&nbsp;&nbsp;&nbsp
+        	<input name="ProyectoHoras" id="ProyectoHoras" value="$ProyectoHoras" />
+    	</td>
+	</tr>
+</table>

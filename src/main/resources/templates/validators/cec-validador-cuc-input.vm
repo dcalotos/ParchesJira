@@ -1,0 +1,18 @@
+Valida que el CUC tiene un formato correcto para la consulta sobre la base de datos de PHOENIX.
+<tr bgcolor="#ffffff">
+    <td align="right" valign="top" bgcolor="#fffff0">
+        <span class="label">Campos personalizados.</span>
+    </td>
+    <td bgcolor="#ffffff" nowrap>
+        <select name="field" id="field">
+        #foreach ($cf in $fields)
+        	<option value="$cf.name"
+            #if ($cf.name.equals($field))
+                SELECTED
+            #end
+            >$cf.name</option>
+        #end
+        </select>
+        <br><font size="1">Selecciona el campo CUC para que se compruebe su formato.</font>
+    </td>
+</tr>

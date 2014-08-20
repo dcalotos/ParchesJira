@@ -1,0 +1,8 @@
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre el proyecto actual para poder realizar la operacion de edicion.<br/>
+&nbsp;&nbsp;-&nbsp;Usuario administrador seleccionado: &nbsp;&nbsp;<b>$userAdmin</b>
+
+Recupera el campo MultiUserPicker
+#if ($field)
+	Campo '$field'.
+#end

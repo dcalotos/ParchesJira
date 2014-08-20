@@ -1,0 +1,5 @@
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre CE para poder realizar la operación de edición.<br/>
+Se cambia el nivel de seguridad en caso de que el especialista sea externo a WK.<br/>
+
+&nbsp;&nbsp;-&nbsp;Usuario administrador seleccionado: &nbsp;&nbsp;<b>$userAdmin</b>

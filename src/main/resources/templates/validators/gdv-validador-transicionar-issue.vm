@@ -1,0 +1,5 @@
+Valida que el usuario tenga Director. Si no es así transicionamos la incidencia a otro estado.
+Eligir el campo Empleado que viaja.
+#if ($field)
+	Valida el formato correcto del campo '$field'.
+#end

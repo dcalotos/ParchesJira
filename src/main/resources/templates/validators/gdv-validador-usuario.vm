@@ -1,0 +1,4 @@
+Valida que el usuario tiene un responsable asignado que le pueda validar. Podemos elegir cualquier valor.
+#if ($field)
+	Valida el formato correcto del campo '$field'.
+#end
